@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#5A6F93</color>
-    <color name="colorPrimaryDark">#5A6985</color>
+    <color name="colorPrimary">#3E5A7E</color>
+    <color name="colorPrimaryDark">#324A6A</color>
     <color name="babyPowderWhite">#FCFCFC</color>
-    <color name="colorAccent">#FF4081</color>
-    <color name="delDotGreen">#98CA3D</color>
-    <color name="delDotBlue">#173B8D</color>
-    <color name="delDotOrange">#FE9901</color>
     <color name="colorPrimaryButton">#5A6985</color>
+    <color name="colorBottomNavbar">#CFCFCF</color>
+    <color name="colorCardBackground">#CDCACC</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorAccent"></color>
+    <color name="colorGrey">#F1F1F1</color>
+    <color name="colorCharcoal">#535353</color>
+    <color name="colorOnSelect">#00796B</color>
+    <color name="backgroundGradientBeginning">#3A5F87</color>
+    <color name="backgroundGradientMiddle">#2B4A6D</color>
+    <color name="backgroundGradientEnd">#1E3655</color>
+    <color name="lineDividerGray">#DFE0DF</color>
 
 </resources>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/babyPowderWhite"
+    android:orientation="vertical">
+
+    <android.support.constraint.Guideline
+        android:id="@+id/titleGuidelineHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.0275" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/titleGuidelineVertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/fabLeftGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.85" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/fabTopGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.84" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/fabBottomGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.96"/>
+
+    <android.support.constraint.Guideline
+        android:id="@+id/headerGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.16"/>
+
+    <android.support.constraint.Guideline
+        android:id="@+id/toolbarGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.0875"/>
+
+    <android.support.constraint.Guideline
+        android:id="@+id/leftGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.025"/>
+
+    <android.support.constraint.Guideline
+        android:id="@+id/rightGuideLine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.975"/>
+
+    <android.support.constraint.Guideline
+        android:id="@+id/navBarTopGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.92" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:textColor="@color/babyPowderWhite"
+        android:textSize="24sp"
+        android:fontFamily="@font/roboto_light"
+        android:text="@string/app_name"
+        app:layout_constraintTop_toTopOf="@id/titleGuidelineHorizontal"
+        app:layout_constraintLeft_toRightOf="@id/titleGuidelineVertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scrollbars="none"
+        app:layout_constraintTop_toBottomOf="@id/toolbarGuideline"
+        app:layout_constraintLeft_toRightOf="@id/leftGuideline"
+        app:layout_constraintRight_toLeftOf="@id/rightGuideLine"
+        app:layout_constraintBottom_toBottomOf="@id/navBarTopGuideline"
+        />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/addReservationButton"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:fabSize="mini"
+        android:src="@drawable/ic_add_24px_white"
+        app:layout_constraintBottom_toTopOf="@id/navBarTopGuideline"
+        app:layout_constraintRight_toLeftOf="@id/rightGuideLine"
+        app:layout_constraintTop_toBottomOf="@id/fabTopGuideline"
+        app:layout_constraintLeft_toRightOf="@id/fabLeftGuideline" />
+
+</android.support.constraint.ConstraintLayout>

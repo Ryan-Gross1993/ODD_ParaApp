@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/addReservationsToolbar"
+        android:layout_width="0dp"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimaryDark"
+        android:elevation="4dp"
+        android:theme="@style/ToolbarTheme"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/place_toolbar_menu"
+        app:popupTheme="@style/PopupTheme" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/fragmentStartGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.16" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/fragmentEndGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.92" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/reservationCardLeftGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.07" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/reservationCardRightGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.93" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/pickupCardViewBottomGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.53" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/destinationCardViewBottomGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.88" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/deadCenter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="5" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/destinationCardViewTopGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.59" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/textLeftGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.08" />
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/pickupCardView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/pickupCardViewBottomGuideline"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toRightOf="@id/reservationCardLeftGuideline"
+        app:layout_constraintRight_toLeftOf="@id/reservationCardRightGuideline"
+        app:layout_constraintTop_toBottomOf="@id/fragmentStartGuideline"
+        app:layout_constraintVertical_bias="1.0">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/rideTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="3dp"
+                android:text="Title"
+                android:textColor="@color/colorOnSelect"
+                android:textSize="13sp"
+                app:layout_constraintTop_toBottomOf="parent" />
+
+            <EditText
+                android:id="@+id/rideTitleEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rideTitle"
+                android:layout_marginLeft="10dp"
+                android:hint="Enter Here."
+                android:backgroundTint="@color/colorPrimaryDark"
+                android:textSize="15sp" />
+
+            <View
+                android:id="@+id/lineUnderTitleView"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/rideTitleEditText"
+                android:background="@color/lineDividerGray" />
+
+            <TextView
+                android:id="@+id/pickupLocationTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/lineUnderTitleView"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="3dp"
+                android:text="Pickup Location"
+                android:textColor="@color/colorOnSelect"
+                android:textSize="13sp" />
+
+            <EditText
+                android:id="@+id/pickupLocationEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/pickupLocationTitle"
+                android:layout_marginLeft="10dp"
+                android:hint="Enter Here."
+                android:backgroundTint="@color/colorPrimaryDark"
+                android:textSize="15sp" />
+
+            <View
+                android:id="@+id/lineUnderPickupLocationView"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/pickupLocationEditText"
+                android:background="@color/lineDividerGray" />
+
+            <TextView
+                android:id="@+id/pickupTimeTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/lineUnderPickupLocationView"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="3dp"
+                android:text="Time"
+                android:textColor="@color/colorOnSelect"
+                android:textSize="13sp" />
+
+            <EditText
+                android:id="@+id/dateEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/pickupTimeTitle"
+                android:layout_marginLeft="10dp"
+                android:clickable="true"
+                android:focusable="false"
+                android:hint="Enter Here."
+                android:backgroundTint="@color/colorPrimaryDark"
+                android:inputType="date"
+                android:textSize="15sp" />
+
+            <View
+                android:id="@+id/lineUnderDateEditText"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/dateEditText"
+                android:background="@color/lineDividerGray" />
+
+            <TextView
+                android:id="@+id/toDripDestinationTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/lineUnderDateEditText"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="3dp"
+                android:text="Destination"
+                android:textColor="@color/colorOnSelect"
+                android:textSize="13sp" />
+
+            <EditText
+                android:id="@+id/toTripDestinationTitleInput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/toDripDestinationTitle"
+                android:layout_marginLeft="10dp"
+                android:hint="Enter Here."
+                android:backgroundTint="@color/colorPrimaryDark"
+                android:textSize="15sp" />
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/destinationCardView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/destinationCardViewBottomGuideline"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toRightOf="@id/reservationCardLeftGuideline"
+        app:layout_constraintRight_toLeftOf="@id/reservationCardRightGuideline"
+        app:layout_constraintTop_toBottomOf="@id/destinationCardViewTopGuideline"
+        app:layout_constraintVertical_bias="1.0">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/fromTripPickupTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="3dp"
+                android:text="Pickup Location"
+                android:textColor="@color/colorOnSelect"
+                android:textSize="13sp"
+                app:layout_constraintTop_toBottomOf="parent" />
+
+            <EditText
+                android:id="@+id/fromTripPickupInput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/fromTripPickupTitle"
+                android:layout_marginLeft="10dp"
+                android:hint="Enter Here."
+                android:backgroundTint="@color/colorPrimaryDark"
+                android:textSize="15sp" />
+
+            <View
+                android:id="@+id/lineUnderTripPickupInput"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/fromTripPickupInput"
+                android:background="@color/lineDividerGray" />
+
+            <TextView
+                android:id="@+id/fromTripTimeTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/lineUnderTripPickupInput"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="3dp"
+                android:text="Time"
+                android:textColor="@color/colorOnSelect"
+                android:textSize="13sp" />
+
+            <EditText
+                android:id="@+id/backTripTimeInput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/fromTripTimeTitle"
+                android:layout_marginLeft="10dp"
+                android:clickable="true"
+                android:focusable="false"
+                android:hint="Enter Here."
+                android:inputType="date"
+                android:backgroundTint="@color/colorPrimaryDark"
+                android:textSize="15sp" />
+
+            <View
+                android:id="@+id/lineUnderBackTripTimeInput"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/backTripTimeInput"
+                android:background="@color/lineDividerGray" />
+
+            <TextView
+                android:id="@+id/fromTripDestinationTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/lineUnderBackTripTimeInput"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="3dp"
+                android:text="Destination"
+                android:textColor="@color/colorOnSelect"
+                android:textSize="13sp" />
+
+            <EditText
+                android:id="@+id/backTripDestinationInput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/fromTripDestinationTitle"
+                android:layout_marginLeft="10dp"
+                android:hint="Enter Here."
+                android:backgroundTint="@color/colorPrimaryDark"
+                android:textSize="15sp" />
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <Button
+        android:id="@+id/submitButton"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/finish"
+        android:textColor="@color/babyPowderWhite"
+        android:background="@color/colorOnSelect"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fragmentEndGuideline" />
+
+    <TextView
+        android:id="@+id/toText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/to"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toTopOf="@id/fragmentStartGuideline"
+        app:layout_constraintLeft_toRightOf="@id/reservationCardLeftGuideline" />
+
+    <TextView
+        android:id="@+id/fromText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/from"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toTopOf="@id/destinationCardViewTopGuideline"
+        app:layout_constraintLeft_toRightOf="@id/reservationCardLeftGuideline" />
+
+
+</android.support.constraint.ConstraintLayout>

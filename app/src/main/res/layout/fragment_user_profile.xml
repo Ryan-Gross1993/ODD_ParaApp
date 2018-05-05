@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.constraint.Guideline
+        android:id="@+id/profileImageTopGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.11" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/profileImageBottomGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.34" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/profileImageLeftGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.31" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/profileImageRightGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.68" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/usernameBottomGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.41" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/userInfoGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.534" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/contactNumberGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.594" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/emailGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.69" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/listVerticalGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.15" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/dobGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.79" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/fabRightGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.95" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/fabLeftGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.84" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/fabTopGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.36" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/addressTopGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.46" />
+
+    <View
+        android:id="@+id/profileImageBackground"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintBottom_toTopOf="@id/usernameBottomGuideline"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/profileImage"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:cardBackgroundColor="@color/lineDividerGray"
+        app:cardCornerRadius="80dp"
+        app:layout_constraintBottom_toTopOf="@id/profileImageBottomGuideline"
+        app:layout_constraintLeft_toRightOf="@id/profileImageLeftGuideline"
+        app:layout_constraintRight_toLeftOf="@id/profileImageRightGuideline"
+        app:layout_constraintTop_toBottomOf="@id/profileImageTopGuideline" />
+
+    <TextView
+        android:id="@+id/userName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_regular"
+        android:text="Name"
+        android:textColor="@color/babyPowderWhite"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@id/usernameBottomGuideline"
+        app:layout_constraintLeft_toRightOf="@id/profileImageLeftGuideline"
+        app:layout_constraintRight_toLeftOf="@id/profileImageRightGuideline"
+        app:layout_constraintTop_toBottomOf="@+id/profileImageBottomGuideline" />
+
+    <TextView
+        android:id="@+id/userAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_light"
+        android:textSize="19sp"
+        app:layout_constraintLeft_toRightOf="@id/listVerticalGuideline"
+        app:layout_constraintTop_toBottomOf="@id/addressTopGuideline" />
+
+    <TextView
+        android:id="@+id/userCityStateAndZip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_light"
+        android:text="Derp"
+        android:textSize="19sp"
+        app:layout_constraintLeft_toRightOf="@id/listVerticalGuideline"
+        app:layout_constraintTop_toBottomOf="@id/userAddress" />
+
+    <TextView
+        android:id="@+id/addressTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_light"
+        android:text="Address"
+        android:textSize="16sp"
+        app:layout_constraintLeft_toRightOf="@id/listVerticalGuideline"
+        app:layout_constraintTop_toBottomOf="@+id/userCityStateAndZip" />
+
+    <TextView
+        android:id="@+id/userPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_light"
+        android:textSize="19sp"
+        app:layout_constraintLeft_toRightOf="@id/listVerticalGuideline"
+        app:layout_constraintTop_toBottomOf="@id/contactNumberGuideline" />
+
+    <TextView
+        android:id="@+id/phoneTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_light"
+        android:text="Phone"
+        android:textSize="16sp"
+        app:layout_constraintLeft_toRightOf="@id/listVerticalGuideline"
+        app:layout_constraintTop_toBottomOf="@id/userPhone" />
+
+    <TextView
+        android:id="@+id/userEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_light"
+        android:textSize="19sp"
+        app:layout_constraintLeft_toRightOf="@id/listVerticalGuideline"
+        app:layout_constraintTop_toBottomOf="@id/emailGuideline" />
+
+    <TextView
+        android:id="@+id/emailTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_light"
+        android:text="Email"
+        android:textSize="16sp"
+        app:layout_constraintLeft_toRightOf="@id/listVerticalGuideline"
+        app:layout_constraintTop_toBottomOf="@id/userEmail" />
+
+    <TextView
+        android:id="@+id/userDOB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_light"
+        android:textSize="19sp"
+        app:layout_constraintLeft_toRightOf="@id/listVerticalGuideline"
+        app:layout_constraintTop_toBottomOf="@id/dobGuideline" />
+
+    <TextView
+        android:id="@+id/dobTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_light"
+        android:text="Date of Birth"
+        android:textSize="16sp"
+        app:layout_constraintLeft_toRightOf="@id/listVerticalGuideline"
+        app:layout_constraintTop_toBottomOf="@id/userDOB" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/fabBottomGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.425" />
+
+</android.support.constraint.ConstraintLayout>

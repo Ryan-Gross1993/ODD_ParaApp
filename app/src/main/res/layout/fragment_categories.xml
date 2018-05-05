@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.constraint.Guideline
+        android:id="@+id/outerLeftGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.03" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/outerRightGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.97" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/horizontalBottomGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.98" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/horizontalTopGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.1675" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/innerRightGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.485" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/innerLeftGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.515" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/upperCenterGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.57" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/lowerCenterGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.59" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/topTextGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.495" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.905" />
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/parksCardView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:cardBackgroundColor="@color/colorPrimary"
+        app:layout_constraintBottom_toTopOf="@+id/upperCenterGuideline"
+        app:layout_constraintEnd_toEndOf="@id/outerRightGuideline"
+        app:layout_constraintStart_toStartOf="@+id/innerLeftGuideline"
+        app:layout_constraintTop_toTopOf="@+id/horizontalTopGuideline" />
+
+    <ImageView
+        android:id="@+id/parksImageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:elevation="2dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/parks"
+        app:layout_constraintBottom_toTopOf="@id/topTextGuideline"
+        app:layout_constraintLeft_toRightOf="@id/innerLeftGuideline"
+        app:layout_constraintRight_toLeftOf="@id/outerRightGuideline"
+        app:layout_constraintTop_toBottomOf="@id/horizontalTopGuideline" />
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/resourcesCardView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:cardBackgroundColor="@color/colorPrimary"
+        app:layout_constraintBottom_toTopOf="@+id/horizontalBottomGuideline"
+        app:layout_constraintLeft_toRightOf="@id/innerLeftGuideline"
+        app:layout_constraintRight_toLeftOf="@id/outerRightGuideline"
+        app:layout_constraintTop_toBottomOf="@+id/lowerCenterGuideline" />
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/medicalCardView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:cardBackgroundColor="@color/colorPrimary"
+        app:layout_constraintBottom_toTopOf="@+id/upperCenterGuideline"
+        app:layout_constraintLeft_toRightOf="@id/outerLeftGuideline"
+        app:layout_constraintRight_toLeftOf="@id/innerRightGuideline"
+        app:layout_constraintTop_toBottomOf="@+id/horizontalTopGuideline" />
+
+    <ImageView
+        android:id="@+id/healthcareImageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:adjustViewBounds="true"
+        android:elevation="2dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/healthcare"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/topTextGuideline"
+        app:layout_constraintLeft_toRightOf="@id/outerLeftGuideline"
+        app:layout_constraintRight_toLeftOf="@id/innerRightGuideline"
+        app:layout_constraintTop_toBottomOf="@+id/horizontalTopGuideline" />
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/entertainmentCardView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:cardBackgroundColor="@color/colorPrimary"
+        app:layout_constraintBottom_toTopOf="@+id/horizontalBottomGuideline"
+        app:layout_constraintLeft_toRightOf="@id/outerLeftGuideline"
+        app:layout_constraintRight_toLeftOf="@id/innerRightGuideline"
+        app:layout_constraintTop_toTopOf="@+id/lowerCenterGuideline" />
+
+    <ImageView
+        android:id="@+id/entertainmentImageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:elevation="2dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/relax"
+        app:layout_constraintBottom_toTopOf="@+id/guideline15"
+        app:layout_constraintLeft_toRightOf="@id/outerLeftGuideline"
+        app:layout_constraintRight_toLeftOf="@id/innerRightGuideline"
+        app:layout_constraintTop_toBottomOf="@+id/lowerCenterGuideline" />
+
+    <ImageView
+        android:id="@+id/resourcesImageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:elevation="2dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/library_shelves"
+        app:layout_constraintBottom_toTopOf="@+id/guideline15"
+        app:layout_constraintLeft_toRightOf="@id/innerLeftGuideline"
+        app:layout_constraintRight_toLeftOf="@id/outerRightGuideline"
+        app:layout_constraintTop_toBottomOf="@+id/lowerCenterGuideline" />
+
+    <TextView
+        android:id="@+id/entertainmentTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="2dp"
+        android:text="Entertainment"
+        android:textColor="@color/babyPowderWhite"
+        android:textSize="24dp"
+        android:fontFamily="@font/roboto_light"
+        app:layout_constraintBottom_toTopOf="@+id/horizontalBottomGuideline"
+        app:layout_constraintEnd_toStartOf="@+id/innerRightGuideline"
+        app:layout_constraintStart_toStartOf="@+id/outerLeftGuideline"
+        app:layout_constraintTop_toTopOf="@+id/guideline15" />
+
+    <TextView
+        android:id="@+id/medicalTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="2dp"
+        android:text="Medical"
+        android:textAlignment="center"
+        android:textSize="24dp"
+        android:textColor="@color/babyPowderWhite"
+        android:fontFamily="@font/roboto_light"
+        app:layout_constraintBottom_toTopOf="@+id/upperCenterGuideline"
+        app:layout_constraintLeft_toRightOf="@id/outerLeftGuideline"
+        app:layout_constraintRight_toLeftOf="@id/innerRightGuideline"
+        app:layout_constraintTop_toBottomOf="@id/topTextGuideline" />
+
+    <TextView
+        android:id="@+id/parksTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="2dp"
+        android:text="Parks"
+        android:textAlignment="center"
+        android:textSize="24dp"
+        android:textColor="@color/babyPowderWhite"
+        android:fontFamily="@font/roboto_light"
+        app:layout_constraintBottom_toTopOf="@+id/upperCenterGuideline"
+        app:layout_constraintEnd_toStartOf="@+id/outerRightGuideline"
+        app:layout_constraintStart_toStartOf="@+id/innerLeftGuideline"
+        app:layout_constraintTop_toTopOf="@+id/topTextGuideline" />
+
+    <TextView
+        android:id="@+id/resourcesTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="2dp"
+        android:text="Resources"
+        android:textSize="24dp"
+        android:textColor="@color/babyPowderWhite"
+        android:fontFamily="@font/roboto_light"
+        app:layout_constraintBottom_toTopOf="@+id/horizontalBottomGuideline"
+        app:layout_constraintEnd_toStartOf="@+id/outerRightGuideline"
+        app:layout_constraintStart_toStartOf="@+id/innerLeftGuideline"
+        app:layout_constraintTop_toBottomOf="@+id/guideline15" />
+
+
+</android.support.constraint.ConstraintLayout>
