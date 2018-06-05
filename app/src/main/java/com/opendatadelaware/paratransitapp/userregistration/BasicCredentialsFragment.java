@@ -3,7 +3,7 @@ package com.opendatadelaware.paratransitapp.userregistration;
 import android.app.DatePickerDialog;
 import android.content.Context;
 import android.icu.text.SimpleDateFormat;
-import android.icu.util.Calendar;
+import java.util.Calendar;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -78,10 +78,19 @@ public class BasicCredentialsFragment extends Fragment {
         final DatePickerDialog.OnDateSetListener birthdayDateSetListener = new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                birthdayCalendar.set(java.util.Calendar.YEAR, year);
-                birthdayCalendar.set(java.util.Calendar.MONTH, year);
-                birthdayCalendar.set(java.util.Calendar.DAY_OF_MONTH, dayOfMonth);
+                Log.i("ON SET YEAR PRIOR", String.valueOf(birthdayCalendar.get(Calendar.YEAR)));
+                Log.i("ON SET MONTH PRIOR", String.valueOf(birthdayCalendar.get(Calendar.MONTH)));
+                birthdayCalendar.set(Calendar.YEAR, year);
+                birthdayCalendar.set(Calendar.MONTH, month);
+                birthdayCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
 
+                Log.i("ON SET YEAR AFTER", String.valueOf(birthdayCalendar.get(Calendar.YEAR)));
+                Log.i("ON SET MONTH PRIOR", String.valueOf(birthdayCalendar.get(Calendar.MONTH)));
+
+
+
+
+                Log.i("Calendar Day", birthdayCalendar.getTime().toString());
                 updateUserBirthday(birthdayCalendar, userBirthday);
 
             }
@@ -91,8 +100,11 @@ public class BasicCredentialsFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-                new DatePickerDialog(getActivity(), birthdayDateSetListener, birthdayCalendar.get(java.util.Calendar.YEAR), birthdayCalendar.get(java.util.Calendar.MONTH),
-                        birthdayCalendar.get(java.util.Calendar.DAY_OF_MONTH)).show();
+                Log.i("ON CLICK YEAR", String.valueOf(birthdayCalendar.get(Calendar.YEAR)));
+                Log.i("ON CLICK MONTH", String.valueOf(birthdayCalendar.get(Calendar.MONTH)));
+
+                new DatePickerDialog(getActivity(), birthdayDateSetListener, birthdayCalendar.get(Calendar.YEAR), birthdayCalendar.get(Calendar.MONTH),
+                        birthdayCalendar.get(Calendar.DAY_OF_MONTH)).show();
 
             }
         });
@@ -172,7 +184,11 @@ public class BasicCredentialsFragment extends Fragment {
             Gender applicantGender = getApplicantGender();
             String birthday = userBirthday.getText().toString();
 
-            User newUser = new User(applicantEmail, passwordOne, applicantName, applicantGender);
+            User newUser = new User();
+            newUser.setApplicantEmail(applicantEmail);
+            newUser.setApplicantPassword(passwordOne);
+            newUser.setApplicantName(applicantName);
+            newUser.setGender(applicantGender);
             newUser.setBirthday(birthday);
 
             listener.createApplicantProfile(newUser);

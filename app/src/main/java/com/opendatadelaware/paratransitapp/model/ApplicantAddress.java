@@ -33,7 +33,7 @@ public class ApplicantAddress implements Serializable{
     @Override
     public String toString() {
 
-        return streetAddress + " " + "," + state + zipCode;
+        return streetAddress + " " + "," + state + " " + zipCode;
 
     }
 

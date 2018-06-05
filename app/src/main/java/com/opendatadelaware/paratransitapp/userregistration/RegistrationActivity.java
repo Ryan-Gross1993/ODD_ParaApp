@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 
 import com.opendatadelaware.paratransitapp.R;
 import com.opendatadelaware.paratransitapp.home.HomeActivity;
@@ -36,7 +37,13 @@ public class RegistrationActivity extends FragmentActivity implements BasicCrede
     @Override
     public void createApplicantProfile(User user) {
 
-        applicantUser = new User(user.getApplicantName(), user.getApplicantEmail(), user.getApplicantPassword(), user.getGender());
+        applicantUser = new User();
+        applicantUser.setApplicantName(user.getApplicantName());
+        Log.i("Name sent by listener is: ", user.getApplicantName());
+        Log.i("At registration activity, name is", applicantUser.getApplicantName());
+        applicantUser.setApplicantEmail(user.getApplicantEmail());
+        applicantUser.setApplicantPassword(user.getApplicantPassword());
+        applicantUser.setGender(user.getGender());
         applicantUser.setBirthday(user.getBirthday());
 
 
@@ -55,6 +62,7 @@ public class RegistrationActivity extends FragmentActivity implements BasicCrede
         ApplicantAddress applicantAddress = new ApplicantAddress(address, state, zipCode);
 
         applicantUser.setApplicantAddress(applicantAddress);
+        applicantUser.setPhoneNumber(phoneNumber);
         applicantUser.setLastFour(lastFour);
 
         Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.fragment_container);

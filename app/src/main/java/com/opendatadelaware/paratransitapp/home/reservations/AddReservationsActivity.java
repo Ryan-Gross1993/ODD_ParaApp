@@ -7,6 +7,7 @@ import android.icu.text.SimpleDateFormat;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -126,7 +127,7 @@ public class AddReservationsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                new DatePickerDialog(AddReservationsActivity.this, fromTripDateListener, toTripCalendar.get(Calendar.YEAR), fromTripCalendar.get(Calendar.MONTH),
+                new DatePickerDialog(AddReservationsActivity.this, fromTripDateListener, fromTripCalendar.get(Calendar.YEAR), fromTripCalendar.get(Calendar.MONTH),
                         fromTripCalendar.get(Calendar.DAY_OF_MONTH)).show();
 
             }
@@ -145,7 +146,6 @@ public class AddReservationsActivity extends AppCompatActivity {
                 Intent mainMenuIntent = new Intent(getApplicationContext(), HomeActivity.class);
 
                 startActivity(mainMenuIntent);
-
 
             }
         });
@@ -185,21 +185,34 @@ public class AddReservationsActivity extends AppCompatActivity {
 
     public void updateEditText(Calendar calendar, EditText editText) {
         String dateFormat = "MM/dd/yy";
-        String timeFormat = " at HH:mm";
+        String timeFormat = "HH:mm";
         String formattedDateAndTime = "";
 
         SimpleDateFormat simpleDateFormatForDate = new SimpleDateFormat(dateFormat, Locale.US);
-        SimpleDateFormat simpleDateFormatForTime = new SimpleDateFormat(timeFormat, Locale.US);
 
-        formattedDateAndTime += simpleDateFormatForTime.format(calendar.getTime());
+        Log.i("Calendar", calendar.getTime().toString());
 
-        if (calendar.get(Calendar.AM_PM) == Calendar.AM) {
-            formattedDateAndTime += " AM";
+        hour = calendar.get(Calendar.HOUR);
+        minute = calendar.get(Calendar.MINUTE);
+
+        int month = calendar.get(Calendar.MONTH);
+        int day = calendar.get(Calendar.DAY_OF_MONTH);
+        int year = calendar.get(Calendar.YEAR);
+
+        String hourAsString = String.valueOf(hour);
+        String minuteAsString = "";
+
+        if (minute < 10) {
+            minuteAsString += "0" + String.valueOf(minute);
         } else {
-            formattedDateAndTime += " PM";
+            minuteAsString += String.valueOf(minute);
         }
 
-        formattedDateAndTime += simpleDateFormatForDate.format(calendar.getTime());
+        formattedDateAndTime += String.valueOf(hour) + ":" + String.valueOf(minute);
+
+        formattedDateAndTime += " PM";
+
+        formattedDateAndTime +=" on " + String.valueOf(month) + "/" + String.valueOf(day) + "/" + "18";
 
         editText.setText(formattedDateAndTime);
 

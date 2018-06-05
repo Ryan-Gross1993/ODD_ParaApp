@@ -6,7 +6,6 @@
         android:id="@+id/action_logout"
         app:showAsAction="never"
         android:icon="@drawable/ic_kebab_menu_24px"
-        android:onClick="logout"
         android:title="@string/logout" />
 
 </menu>

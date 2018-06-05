@@ -15,6 +15,8 @@ public class User implements Serializable{
     String genderAsString;
     String birthday;
 
+    public User() {}
+
     public User(String applicantName, String applicantEmail, String applicantPassword, Gender gender) {
         this.applicantName = applicantName;
         this.applicantEmail = applicantEmail;
